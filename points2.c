@@ -50,9 +50,6 @@ double area(const polygon *p) {
         area += fabs(sum_x) * fabs(sum_y);
         j = i;
     }
-    /*double sum_x = p->points[p->n-1].x + p->points[0].x;
-    double sum_y = p->points[p->n-1].y - p->points[0].y;
-    area = fabs(sum_x) * fabs(sum_y)/2;*/
 
     return fabs(area/2);
 }
