@@ -58,3 +58,5 @@ int main(int argc, char *argv[]) {
     printf("%lf\n", area(points, count));
     free(points);
 }
+
+//for both this and points2.c all of the test cases work except for the {(1 1), (5 1), (5 3), (1 3)} for some reason I'm not sure
