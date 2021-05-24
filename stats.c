@@ -44,4 +44,5 @@ int main(int argc, char *argv[]) {
     printf("%lf\n", sum(nums, count));
     printf("%lf\n", average(nums, count));
     printf("%lf\n", std_dev(nums, count));
+    free(nums);
 }
