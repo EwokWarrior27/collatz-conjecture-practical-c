@@ -43,16 +43,18 @@ double perimeter(const polygon *p) {
 
 double area(const polygon *p) {
     double area = 0;
-    for (size_t i = 0; i < p->n-1; i++) {
-        double sum_x = p->points[i+1].x + p->points[i].x;
-        double sum_y = p->points[i+1].y - p->points[i].y;
-        area += fabs(sum_x) * fabs(sum_y) / 2;
+    int j = p->n-1;
+    for (int i = 0; i < p->n; i++) {
+        double sum_x = p->points[j].x + p->points[i].x;
+        double sum_y = p->points[j].y - p->points[i].y;
+        area += fabs(sum_x) * fabs(sum_y);
+        j = i;
     }
-    double sum_x = p->points[0].x + p->points[p->n-1].x;
-    double sum_y = p->points[0].y - p->points[p->n-1].y;
-    area = fabs(sum_x) * fabs(sum_y)/2;
+    /*double sum_x = p->points[p->n-1].x + p->points[0].x;
+    double sum_y = p->points[p->n-1].y - p->points[0].y;
+    area = fabs(sum_x) * fabs(sum_y)/2;*/
 
-    return area;
+    return fabs(area/2);
 }
 
 int main(int argc, char *argv[]) {
