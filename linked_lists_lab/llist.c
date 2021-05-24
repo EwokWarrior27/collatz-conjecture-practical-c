@@ -59,4 +59,5 @@ void list_free(node *head) {
         free(current_node->prev);
         current_node = current_node->next;
     }
+    free(current_node);
 }
