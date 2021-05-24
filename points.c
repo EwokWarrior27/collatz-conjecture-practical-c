@@ -38,16 +38,15 @@ double perimeter(const point *points, size_t count) {
 
 double area(const point *points, size_t count) {
     double area = 0;
-    for (int i = 0; i < count-1; i++) {
-        double sum_x = points[i+1].x + points[i].x;
-        double sum_y = points[i+1].y - points[i].y;
-        area += fabs(sum_x) * fabs(sum_y)/2;
+    int j = count-1;
+    for (int i = 0; i < count; i++) {
+        double sum_x = points[j].x + points[i].x;
+        double sum_y = points[j].y - points[i].y;
+        area += sum_x * sum_y;
+        j = i;
     }
-    double sum_x = points[0].x + points[count-1].x;
-    double sum_y = points[0].y - points[count-1].y;
-    area += fabs(sum_x) * fabs(sum_y)/2;
     
-    return area;
+    return area / 2;
 }
 
 int main(int argc, char *argv[]) {
